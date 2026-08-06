@@ -1,6 +1,6 @@
 const Header = ({course}) => {
     return (
-              <h1>{course}</h1>
+              <h1 style={{color: 'red', backgroundColor : 'blue'}}>{course}</h1>
 
     )
 }

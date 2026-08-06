@@ -1,16 +1,33 @@
-import Hello from "./Menasje"
-import Descripcion from "./Descripcion"
+ import {useState} from "react"
 
-const App = () => {
+const App = (props) => {
+    const [counter, setCounter] = useState(0); //devuelve el valor y una funcion que actualiza el valor
+
+    console.log("render");
+    const handleClick = (isPositive) => {
+        let increment = isPositive ? 1 : -1
+        setCounter(counter + increment)
+    }
+    console.liog
+
     return (
         <div>
-            <h1>Welcome to my ass shit App</h1>
-            <Hello name = "Anibal" age="18"></Hello>
-            <Descripcion color = "red" msg="Este es mi componente"></Descripcion>
-            <Descripcion color = "green" msg="creado personalmente"></Descripcion>
-            <Descripcion color = "blue" msg="con cada mensaje diferente"></Descripcion>
+            <h1>Hola curso de react</h1>
+            <button onClick={() => {
+                handleClick(true)
+            }}>
+                boton
+            </button>
+            <button onClick={() => {
+                handleClick(false)
+            }} >
+                decrementar
+            </button>
+            <h2>{counter}</h2>
+            <p>no se que dice aca</p>
         </div>
     )
+
 }
 
-export default App
+ export default App
